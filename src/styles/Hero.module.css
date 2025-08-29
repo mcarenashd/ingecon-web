@@ -1,0 +1,40 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 2rem; /* Espaciado superior e inferior */
+  background-color: #f8f9fa; /* Un color de fondo suave */
+  color: #333;
+}
+
+.heroContent {
+  max-width: 800px;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroContent p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.heroButton {
+  background-color: #007bff; /* Color azul del botón, puedes cambiarlo */
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.heroButton:hover {
+  background-color: #0056b3; /* Un azul más oscuro al pasar el mouse */
+}
