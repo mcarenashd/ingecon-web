@@ -1,0 +1,31 @@
+.projects {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #333;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filterButton {
+  background-color: #e9ecef;
+  color: #333;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem; /* Asegúrate de que este valor esté ahí */
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}

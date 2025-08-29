@@ -1,6 +1,8 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import Services from '../components/Services';
+import Projects from '../components/Projects';
 
 function Home() {
   return (
@@ -8,7 +10,7 @@ function Home() {
       <Hero />
       <About />
       <Services />
-      {/* Aquí irán las siguientes secciones: About, Services, etc. */}
+      <Projects />
     </main>
   );
 }
