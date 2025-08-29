@@ -17,3 +17,9 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.text{
+ margin-left: 6rem;
+ margin-right: 6rem;
+ margin-bottom: 2rem;
+}

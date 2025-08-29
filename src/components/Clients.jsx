@@ -19,11 +19,11 @@ function Clients() {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
-    slidesToShow: 5, // Muestra 5 logos a la vez en pantallas grandes
+    speed:500,
+    slidesToShow: 5, 
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 2500,
     cssEase: "linear",
     responsive: [
       {

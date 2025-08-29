@@ -6,7 +6,7 @@ function About() {
     <section className={styles.about}>
       <div className={styles.aboutImage}>
         {/* Aquí irá una imagen de la empresa o un icono */}
-        <img src="https://via.placeholder.com/500" alt="Ingecon Team" />
+        <img src="src/assets/about-us.png" alt="Ingecon Team" />
       </div>
       <div className={styles.aboutContent}>
         <h2>Quiénes Somos</h2>
@@ -17,6 +17,7 @@ function About() {
           Nuestra <strong>misión</strong> está encaminada a la prestación de servicios de Ingeniería, buscando la satisfacción del cliente, proveedores y de nuestro recurso humano, a través del mejoramiento continuo. Nuestras actividades se desarrollan con gran sentido de respeto por la comunidad beneficiaria y usuaria de nuestra labor.
         </p>
         <p>Nuestra <strong>visión</strong>, es consolidarnos en el año de 2015, como una de las mejores y más reconocidas empresas de ingeniería, especializada en la ejecución de Interventoría de la construcción y diseño, contribuyendo de esta forma al desarrollo del país, aportando los mejores recursos humanos y técnicos.”</p>
+        <p>La <strong>calidad</strong> en <strong>INGECON</strong>, está entendida como: "Nuestro compromiso, actitud e innovación" para satisfacer al cliente mediante el desarrollo de trabajos que cumplan en un todo sus requisitos, necesidades y expectativas. Nuestra política se orienta a la obtención de la confianza y respeto de nuestro recurso humano, brindando la suficiente capacitación, así como los elementos de motivación e innovación dirigidos hacia la obtención de un gran sentido de pertenencia, que permita alcanzar los objetivos y metas de la empresa, mejorando continuamente la eficacia del Sistema de Gestión de Calidad.</p>
       </div>
     </section>
   );
