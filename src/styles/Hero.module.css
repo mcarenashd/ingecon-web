@@ -24,7 +24,7 @@
 }
 
 .heroButton {
-  background-color: #007bff; /* Color azul del botón, puedes cambiarlo */
+  background-color: #A4BF20;
   color: #fff;
   border: none;
   padding: 1rem 2rem;
@@ -36,5 +36,5 @@
 }
 
 .heroButton:hover {
-  background-color: #0056b3; /* Un azul más oscuro al pasar el mouse */
+  background-color: #41A317; /* Un azul más oscuro al pasar el mouse */
 }

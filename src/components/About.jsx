@@ -11,11 +11,12 @@ function About() {
       <div className={styles.aboutContent}>
         <h2>Quiénes Somos</h2>
         <p>
-          En Ingecon, somos un equipo de ingenieros y constructores apasionados por la excelencia. Con más de 20 años de experiencia, nos especializamos en la construcción de proyectos de infraestructura, industriales y residenciales, siempre cumpliendo con los más altos estándares de calidad y seguridad.
+          Somos una organización dedicada a la Interventoría, Consultoría y Gerencia. La Empresa nació en el año de 1.978 con el nombre de Ingenierías Ltda.; a partir de Agosto de 1.998 cambió su razón social a INGECON S.A. y a partir del 5 de Septiembre de 2012 cambió su razón social a <strong>INGENIERIA Y CONSULTORIA INGECON S.A.S</strong>. En lo que respecta a los servicios de Interventoría los define como “el control ejercido, tanto técnico, como administrativo, por la empresa interventora a las empresas diseñadoras y/o constructoras”. Este servicio se caracteriza porque tiene un componente no material (el servicio profesional de consultoría) y un componente material (los documentos que resultan del control).
         </p>
         <p>
-          Nuestra misión es transformar el entorno urbano y rural con soluciones innovadoras y sostenibles, dejando una huella de desarrollo y confianza en cada obra que emprendemos.
+          Nuestra <strong>misión</strong> está encaminada a la prestación de servicios de Ingeniería, buscando la satisfacción del cliente, proveedores y de nuestro recurso humano, a través del mejoramiento continuo. Nuestras actividades se desarrollan con gran sentido de respeto por la comunidad beneficiaria y usuaria de nuestra labor.
         </p>
+        <p>Nuestra <strong>visión</strong>, es consolidarnos en el año de 2015, como una de las mejores y más reconocidas empresas de ingeniería, especializada en la ejecución de Interventoría de la construcción y diseño, contribuyendo de esta forma al desarrollo del país, aportando los mejores recursos humanos y técnicos.”</p>
       </div>
     </section>
   );

@@ -1,18 +1,26 @@
 import React from 'react';
 import styles from '../styles/Navbar.module.css';
+import deckImg from "../assets/logo-ingecon.png";
+
 
 function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarBrand}>
-        <h1>Ingecon</h1>
+        <img
+          className={styles.logoImage}
+          src={deckImg}
+          alt="logo-ingecon"
+        />
       </div>
-      <ul className={styles.navbarLinks}>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/servicios">Servicios</a></li>
-        <li><a href="/proyectos">Proyectos</a></li>
-        <li><a href="/contacto">Contacto</a></li>
-      </ul>
+      <div className={styles.navbarLinksContainer}> {/* Nuevo contenedor para los links */}
+        <div className={styles.navbarLinks}>
+          <a href="/">Inicio</a>
+          <a href="/servicios">Servicios</a>
+          <a href="/proyectos">Proyectos</a>
+          <a href="/contacto">Contacto</a>
+        </div>
+      </div>
     </nav>
   );
 }

@@ -1,33 +1,45 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #ffffff; /* Color de fondo claro */
+  background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; 
 }
 
-.navbar-brand h1 {
-  margin: 0;
-  color: #333; /* Color del texto del logo */
-  font-size: 1.5rem;
+.logoImage {
+  width: 75px;
+  height: auto;
 }
 
-.navbar-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.navbarBrand {
   display: flex;
-  gap: 1.5rem; /* Espacio entre los enlaces */
+  align-items: center;
 }
 
-.navbar-links a {
+.navbarLinksContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+}
+
+.navbarLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbarLinks a {
   text-decoration: none;
-  color: #555; /* Color de los enlaces */
+  color: #555;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.navbar-links a:hover {
-  color: #007bff; /* Color al pasar el mouse, puedes cambiarlo */
+.navbarLinks a:hover {
+  color: #007bff;
 }
