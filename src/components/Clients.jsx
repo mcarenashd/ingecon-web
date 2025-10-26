@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
@@ -59,8 +60,7 @@ function Clients() {
   return (
     <section className={styles.clients}>
       <h2>Nuestros Clientes</h2>
-      <div className={styles.carouselContainer}>
-        <Slider {...settings}>
+      <div className={styles.carouselContainer}>\n        <Slider {...settings}>
           {clientsData.map(client => (
             <div key={client.id} className={styles.clientLogo}>
               <img src={client.logoUrl} alt={client.name} />

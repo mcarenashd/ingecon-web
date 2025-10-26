@@ -4,7 +4,7 @@ import styles from '../styles/ProjectCard.module.css';
 function ProjectCard({ title, description, imageUrl }) {
   return (
     <div className={styles.card}>
-      <img src={imageUrl} alt={title} className={styles.cardImage} />
+      {imageUrl && <img src={imageUrl} alt={title} className={styles.cardImage} />}
       <div className={styles.cardContent}>
         <h3>{title}</h3>
         <p>{description}</p>

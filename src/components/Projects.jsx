@@ -39,7 +39,7 @@ function Projects() {
             title: item.fields.title,
             description: item.fields.description,
             category: item.fields.category,
-            imageUrl: item.fields.image.fields.file.url
+            imageUrl: item.fields.image?.fields?.file?.url
           }));
           
           setProjects(fetchedProjects);
