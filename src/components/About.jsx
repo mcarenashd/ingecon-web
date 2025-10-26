@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from '../styles/About.module.css';
+import aboutUsImage from '../assets/about-us.png';
 
 function About() {
   return (
     <section className={styles.about}>
       <div className={styles.aboutImage}>
         {/* Aquí irá una imagen de la empresa o un icono */}
-        <img src="src/assets/about-us.png" alt="Ingecon Team" />
+        <img src={aboutUsImage} alt="Ingecon Team" />
       </div>
       <div className={styles.aboutContent}>
         <h2>Quiénes Somos</h2>

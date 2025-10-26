@@ -4,15 +4,24 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from '../styles/Clients.module.css';
 
+import aeronauticaLogo from '../assets/aeronautica.png';
+import aniLogo from '../assets/ani.png';
+import enterritorioLogo from '../assets/enterritorio.png';
+import iduLogo from '../assets/idu.png';
+import inviasLogo from '../assets/invias.png';
+import transcaribeLogo from '../assets/transcaribe.png';
+import avanteLogo from '../assets/avante.png';
+import metrocaliLogo from '../assets/metrocali.png';
+
 const clientsData = [
-  { id: 1, name: 'Client A', logoUrl: 'src/assets/aeronautica.png' },
-  { id: 2, name: 'Client B', logoUrl: 'src/assets/ani.png' },
-  { id: 3, name: 'Client C', logoUrl: 'src/assets/enterritorio.png' },
-  { id: 4, name: 'Client D', logoUrl: 'src/assets/idu.png' },
-  { id: 5, name: 'Client E', logoUrl: 'src/assets/invias.png' },
-  { id: 6, name: 'Client F', logoUrl: 'src/assets/transcaribe.png' },
-  { id: 7, name: 'Client G', logoUrl: 'src/assets/avante.png' },
-  { id: 8, name: 'Client H', logoUrl: 'src/assets/metrocali.png' },
+  { id: 1, name: 'Client A', logoUrl: aeronauticaLogo },
+  { id: 2, name: 'Client B', logoUrl: aniLogo },
+  { id: 3, name: 'Client C', logoUrl: enterritorioLogo },
+  { id: 4, name: 'Client D', logoUrl: iduLogo },
+  { id: 5, name: 'Client E', logoUrl: inviasLogo },
+  { id: 6, name: 'Client F', logoUrl: transcaribeLogo },
+  { id: 7, name: 'Client G', logoUrl: avanteLogo },
+  { id: 8, name: 'Client H', logoUrl: metrocaliLogo },
 ];
 
 function Clients() {
