@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createClient } from 'contentful';
 import ProjectCard from './ProjectCard';
 import styles from '../styles/Projects.module.css';
 
-const projectsData = [
-  // Proyectos para 'Principales trabajos realizados' (filtro 'all')
-  { id: 1, title: 'Edificio Residencial', category: 'Edificaciones', description: 'Moderno complejo de apartamentos con 50 unidades y amplias zonas verdes.', imageUrl: 'https://via.placeholder.com/600x400/007bff/FFFFFF?text=Edificio' },
-  { id: 2, title: 'Puente de Conexión', category: 'Interventoría de obras Viales', description: 'Estructura de concreto prefabricado que conecta dos importantes sectores de la ciudad.', imageUrl: 'https://via.placeholder.com/600x400/007bff/FFFFFF?text=Puente' },
-  { id: 3, title: 'Estudios de Viabilidad', category: 'Estudios y Diseños', description: 'Análisis completo de viabilidad y factibilidad técnica de un proyecto a gran escala.', imageUrl: 'https://via.placeholder.com/600x400/007bff/FFFFFF?text=Estudios' },
-  { id: 4, title: 'Gerencia en Proyectos Civiles', category: 'Interventorías y gerencias...', description: 'Servicios de gerencia y consultoría para proyectos de construcción a gran escala.', imageUrl: 'https://via.placeholder.com/600x400/007bff/FFFFFF?text=Gerencia' },
-  { id: 5, title: 'Mantenimiento de Puentes', category: 'Interventoría y Mantenimiento de Obras Civiles', description: 'Mantenimiento y reparación de puentes para asegurar su durabilidad y seguridad.', imageUrl: 'https://via.placeholder.com/600x400/007bff/FFFFFF?text=Mantenimiento+Puentes' }
-];
+const client = createClient({
+  space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
+  accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN
+});
 
 const categories = [
   'Principales trabajos realizados',
@@ -21,14 +18,62 @@ const categories = [
 ];
 
 function Projects() {
+  const [projects, setProjects] = useState([]);
   const [filter, setFilter] = useState('Principales trabajos realizados');
+  const [projectsToShow, setProjectsToShow] = useState(6);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const filteredProjects = projectsData.filter(project => {
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await client.getEntries({
+          content_type: 'proyecto'
+        });
+        
+        // Filtra cualquier item nulo o indefinido directamente de la respuesta
+        const validItems = response.items.filter(item => item && item.fields);
+
+        if (validItems.length > 0) {
+          const fetchedProjects = validItems.map(item => ({
+            id: item.sys.id,
+            title: item.fields.title,
+            description: item.fields.description,
+            category: item.fields.category,
+            imageUrl: item.fields.image.fields.file.url
+          }));
+          
+          setProjects(fetchedProjects);
+        } else {
+          setProjects([]);
+        }
+
+      } catch (error) {
+        console.error("Error fetching projects from Contentful:", error);
+        setProjects([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  const filteredProjects = projects.filter(project => {
     if (filter === 'Principales trabajos realizados') {
       return true;
     }
     return project.category === filter;
   });
+
+  const handleLoadMore = () => {
+    setProjectsToShow(prev => prev + 6);
+  };
+
+  const displayedProjects = filteredProjects.slice(0, projectsToShow);
+
+  if (isLoading) {
+    return <div className={styles.loading}>Cargando proyectos...</div>;
+  }
 
   return (
     <section className={styles.projects}>
@@ -38,14 +83,17 @@ function Projects() {
           <button
             key={category}
             className={`${styles.filterButton} ${filter === category ? styles.active : ''}`}
-            onClick={() => setFilter(category)}
+            onClick={() => {
+              setFilter(category);
+              setProjectsToShow(6);
+            }}
           >
             {category}
           </button>
         ))}
       </div>
       <div className={styles.cardGrid}>
-        {filteredProjects.map(project => (
+        {displayedProjects.map(project => (
           <ProjectCard
             key={project.id}
             title={project.title}
@@ -54,6 +102,11 @@ function Projects() {
           />
         ))}
       </div>
+      {projectsToShow < filteredProjects.length && (
+        <button onClick={handleLoadMore} className={styles.loadMoreButton}>
+          Cargar Más
+        </button>
+      )}
     </section>
   );
 }

@@ -4,6 +4,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import DataProtection from './pages/DataProtection';
+import Projects from './components/Projects';
+import Services from './components/Services'; // <-- Importa el componente Services
 
 function App() {
   return (
@@ -12,7 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contacto" element={<Contact />} />
-        {/* Aquí puedes agregar más rutas para Servicios, Proyectos, etc. */}
+        <Route path="/proteccion-datos" element={<DataProtection />} />
+        <Route path="/proyectos" element={<Projects />} />
       </Routes>
       <Footer />
     </BrowserRouter>

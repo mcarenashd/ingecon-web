@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from 'react-hook-form'; // Importamos el hook
+import { useForm } from 'react-hook-form'; 
 import styles from '../styles/Contact.module.css';
 
 function Contact() {
